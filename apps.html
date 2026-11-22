@@ -70,25 +70,25 @@
 <h3>Brand Watch</h3><div class="ipd-amount">$49 <small>/ month</small></div>
 <p>Visibility into potential misuse of one brand.</p>
 <ul><li>Periodic monitoring of supported digital platforms</li><li>New-finding alerts and a monthly summary</li><li>No enforcement submissions included</li></ul>
-<a class="hero-cta secondary" href="mailto:hello@ipdefense.ai?subject=Brand%20Watch%20Plan%20-%20%2449%2Fmo">Request Brand Watch</a>
+<a class="hero-cta secondary" data-selected-plan="Brand Watch ($49/month)" href="#contact">Request Brand Watch</a>
 </article>
 <article class="ipd-plan featured">
 <h3>Brand Protection</h3><div class="ipd-amount">$99 <small>/ month</small></div>
 <p>Monitoring plus hands-on enforcement support for one brand.</p>
 <ul><li>Monitoring across supported app and digital platforms</li><li>One eligible enforcement case per month</li><li>Evidence preparation, submission and follow-up</li></ul>
-<a class="hero-cta" href="mailto:hello@ipdefense.ai?subject=Brand%20Protection%20Plan%20-%20%2499%2Fmo">Request Brand Protection</a>
+<a class="hero-cta" data-selected-plan="Brand Protection ($99/month)" href="#contact">Request Brand Protection</a>
 </article>
 <article class="ipd-plan">
 <h3>Brand Protection Plus</h3><div class="ipd-amount">$149 <small>/ month</small></div>
 <p>Expanded coverage and priority review for one brand.</p>
 <ul><li>Broader review of supported app, social, web and domain threats</li><li>Two eligible enforcement cases per month</li><li>Evidence preparation, submission and follow-up</li></ul>
-<a class="hero-cta secondary" href="mailto:hello@ipdefense.ai?subject=Brand%20Protection%20Plus%20-%20%24149%2Fmo">Request Protection Plus</a>
+<a class="hero-cta secondary" data-selected-plan="Brand Protection Plus ($149/month)" href="#contact">Request Protection Plus</a>
 </article>
 </div>
 <div class="ipd-oneoff">
 <div><h3 style="color:var(--text);margin:0 0 6px">Single Takedown — $199 one-time</h3>
 <p style="color:var(--muted);margin:0">One eligible infringement case, including review, evidence preparation, complaint submission and follow-up.</p></div>
-<a class="hero-cta secondary" href="mailto:hello@ipdefense.ai?subject=Single%20Takedown%20-%20%24199">Request a Single Takedown</a>
+<a class="hero-cta secondary" data-selected-plan="Single Takedown ($199 one-time)" href="#contact">Request a Single Takedown</a>
 </div>
 <p class="ipd-note">Plans are proposed introductory offerings and subject to eligibility and scope confirmation. An enforcement case concerns one reported account, listing, domain or other identified target; multiple targets are separate cases. Enforcement outcomes are not guaranteed. Direct checkout will be added once secure payment links and service terms are finalized. For custom requirements, <a href="#contact">contact our team</a>.</p>
 </section>
@@ -179,4 +179,14 @@
 </div>
 <div class="ff-bottom"><span>© 2026 IP Defense. All rights reserved.</span><div><a href="./privacy.html" style="color:var(--muted);margin-right:20px;transition:color 0.2s;">Privacy Policy</a><a href="./terms.html" style="color:var(--muted);transition:color 0.2s;">Terms of Service</a></div></div>
 </footer>
-<script defer="" src="./main.js"></script><!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "cd7e9d63cf6c4220a40c126bdb324f62"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics --></body></html>
+<script defer="" src="./main.js"></script><!-- Cloudflare Web Analytics --><script data-cf-beacon='{"token": "cd7e9d63cf6c4220a40c126bdb324f62"}' defer="" src="https://static.cloudflareinsights.com/beacon.min.js"></script><!-- End Cloudflare Web Analytics --><script>document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('#protection-plans [data-selected-plan]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var field = document.getElementById('f-situation');
+      if (!field) return;
+      var prefix = 'I am interested in the ' + link.getAttribute('data-selected-plan') + ' plan.';
+      if (!field.value.trim()) field.value = prefix + '\n\n';
+      else if (!field.value.includes(prefix)) field.value = prefix + '\n\n' + field.value;
+    });
+  });
+});</script></body></html>
